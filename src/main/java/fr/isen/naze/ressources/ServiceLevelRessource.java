@@ -21,9 +21,7 @@ public class ServiceLevelRessource {
 
     @GET
     public List<ServiceLevel> getServiceLevels() {
-        List<ServiceLevel> result = this.slService.getServiceLevels();
-        System.out.println(result);
-        return result;
+        return this.slService.getServiceLevels();
     }
 
 }
