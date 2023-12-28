@@ -3,6 +3,10 @@ package fr.isen.naze.services;
 import java.util.List;
 import com.modeliosoft.modelio.javadesigner.annotations.objid;
 import fr.isen.naze.models.ServiceLevel;
+import jakarta.enterprise.context.ApplicationScoped;
+import jakarta.inject.Inject;
+import jakarta.persistence.EntityManager;
+import jakarta.transaction.Transactional;
 
 @objid ("abee1db1-b932-4245-a356-124e735731f0")
 public interface ServiceLevelService {

@@ -2,7 +2,7 @@ package fr.isen.naze.services;
 
 import com.modeliosoft.modelio.javadesigner.annotations.objid;
 import fr.isen.naze.models.Contact;
-import fr.isen.naze.models.Order;
+import fr.isen.naze.models.OrderVM;
 
 @objid ("9bade41b-32ef-4e82-80cd-d82ff0e54450")
 public interface ContactService {
@@ -13,6 +13,6 @@ public interface ContactService {
     Contact addContactByOrderId(final int id_order, final Contact new_contact);
 
     @objid ("24a9cc49-32cf-40b8-8b3e-a41869a83405")
-    Contact updateContactByOrderId(final int id_order, final Order newContact);
+    Contact updateContactByOrderId(final int id_order, final OrderVM newContact);
 
 }
