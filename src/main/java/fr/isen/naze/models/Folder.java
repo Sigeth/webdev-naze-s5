@@ -2,11 +2,12 @@ package fr.isen.naze.models;
 
 import com.modeliosoft.modelio.javadesigner.annotations.mdl;
 import com.modeliosoft.modelio.javadesigner.annotations.objid;
+import io.quarkus.hibernate.orm.panache.PanacheEntityBase;
 import jakarta.persistence.*;
 
 @objid ("fa241b9e-0eeb-49be-813c-af70aff1fca8")
 @Entity
-public class Folder {
+public class Folder extends PanacheEntityBase {
     @mdl.prop
     @objid ("82abbe73-c9f4-4caf-beb7-e9938e0a4816")
     @Id

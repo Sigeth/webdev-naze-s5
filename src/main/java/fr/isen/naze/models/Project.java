@@ -2,13 +2,14 @@ package fr.isen.naze.models;
 
 import com.modeliosoft.modelio.javadesigner.annotations.mdl;
 import com.modeliosoft.modelio.javadesigner.annotations.objid;
+import io.quarkus.hibernate.orm.panache.PanacheEntityBase;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import jakarta.persistence.ManyToOne;
 
 @objid ("1e7b3194-d9d4-4c51-aae2-4c22a9dfb201")
 @Entity
-public class Project {
+public class Project extends PanacheEntityBase {
     @mdl.prop
     @objid ("da49365b-04ba-4c20-a33d-c3284144dd50")
     @Id
