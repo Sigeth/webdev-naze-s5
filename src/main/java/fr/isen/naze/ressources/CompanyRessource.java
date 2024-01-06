@@ -4,6 +4,7 @@ import fr.isen.naze.models.Company;
 import fr.isen.naze.models.Project;
 import fr.isen.naze.services.impl.CompanyServiceImpl;
 import jakarta.inject.Inject;
+import jakarta.persistence.criteria.Order;
 import jakarta.ws.rs.GET;
 import jakarta.ws.rs.Path;
 import jakarta.ws.rs.Produces;
@@ -29,7 +30,7 @@ public class CompanyRessource {
     @Path("/project")
     @GET
     public List<Project> getProjects() {
-        return this.companyService.getProjects();
+        return  this.companyService.getProjects();
     }
 
 }

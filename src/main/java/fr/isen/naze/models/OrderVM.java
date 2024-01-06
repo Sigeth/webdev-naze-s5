@@ -4,13 +4,14 @@ import com.modeliosoft.modelio.javadesigner.annotations.mdl;
 import com.modeliosoft.modelio.javadesigner.annotations.objid;
 import fr.isen.naze.models.enums.enum_license;
 import fr.isen.naze.models.enums.enum_location;
+import io.quarkus.hibernate.orm.panache.PanacheEntityBase;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import jakarta.persistence.OneToOne;
 
 @objid ("d364721f-7646-4452-bf5a-17e0c7c700d4")
 @Entity
-public class OrderVM {
+public class OrderVM extends PanacheEntityBase {
     @mdl.prop
     @objid ("f85b2365-bc1d-480e-91c3-b58b8ad60cdd")
     @Id
