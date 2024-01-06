@@ -49,7 +49,7 @@ public class Contact extends PanacheEntityBase {
 
     @mdl.prop
     @objid ("0f9fde1d-410c-49be-98ce-1b31a8a38b88")
-    @OneToMany
+    @OneToMany(cascade = CascadeType.ALL)
     public List<Availability> availabilities;
 
 }

@@ -19,7 +19,7 @@ public class Folder extends PanacheEntityBase {
 
     @mdl.prop
     @objid ("79f7a8e6-c4d0-4d25-8835-19021f56b92b")
-    @ManyToOne
+    @ManyToOne(cascade = CascadeType.ALL)
     public Company company_folder;
 
 }

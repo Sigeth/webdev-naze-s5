@@ -21,7 +21,7 @@ public class OrderRessource {
     @Path("/{orderID}")
     @GET
     public OrderVM getOrderById(final int orderID) {
-        return this.orderService.getOrd0erById(orderID);
+        return this.orderService.getOrderById(orderID);
     }
 
     @POST
@@ -35,7 +35,29 @@ public class OrderRessource {
     @PUT
     @Transactional
     @Consumes(MediaType.APPLICATION_JSON)
-    public void updateOrderById(int orderID, OrderVM newOrder) {
+    public OrderVM updateOrderById(int orderID, OrderVM newOrder) {
+        return this.orderService.updateOrderById(orderID, newOrder);
     }
 
+    @Path("/{orderID}/contact")
+    @GET
+    public Contact getContactByOrderId(final int orderID) {
+        return this.orderService.getContactByOrderId(orderID);
+    }
+
+    @Path("/{orderID}/contact")
+    @POST
+    @Transactional
+    @Consumes(MediaType.APPLICATION_JSON)
+    public Contact addContactByOrderId(final int orderID, Contact newContact) {
+        return this.orderService.addContactByOrderId(orderID, newContact);
+    }
+
+    @Path("/{orderID}/contact")
+    @PUT
+    @Transactional
+    @Consumes(MediaType.APPLICATION_JSON)
+    public Contact updateContactByOrderId(final int orderID, Contact newContact) {
+        return this.orderService.updateContactByOrderId(orderID, newContact);
+    }
 }

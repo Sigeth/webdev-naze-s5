@@ -14,7 +14,6 @@ public class ServiceLevel extends PanacheEntityBase {
     @mdl.prop
     @objid ("9d543c2f-23af-4dbc-9cef-f036e30b5dee")
     @Id
-    @GeneratedValue
     public int id_service;
 
     @mdl.prop

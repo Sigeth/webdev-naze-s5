@@ -5,6 +5,7 @@ import com.modeliosoft.modelio.javadesigner.annotations.objid;
 import fr.isen.naze.models.enums.enum_license;
 import fr.isen.naze.models.enums.enum_location;
 import io.quarkus.hibernate.orm.panache.PanacheEntityBase;
+import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import jakarta.persistence.OneToOne;
@@ -35,17 +36,17 @@ public class OrderVM extends PanacheEntityBase {
 
     @mdl.prop
     @objid ("884f5669-4e21-42aa-8f99-35967f714f69")
-    @OneToOne
+    @OneToOne(cascade = CascadeType.ALL)
     public Project project_order;
 
     @mdl.prop
     @objid ("9af087ff-0b8a-407f-853d-0184a69b8095")
-    @OneToOne
+    @OneToOne(cascade = CascadeType.ALL)
     public Contact contact_order;
 
     @mdl.prop
     @objid ("6a20c4c5-7df1-40b8-8777-24dd478a127b")
-    @OneToOne
+    @OneToOne(cascade = CascadeType.ALL)
     public ServiceLevel service_order;
 
     @mdl.prop
