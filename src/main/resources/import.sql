@@ -3,9 +3,9 @@ INSERT INTO NazeDB.Company (id_company, name, sector) VALUES (0, 'Macompagni', '
 
 -- Insérer des données dans la table Folder
 INSERT INTO NazeDB.Folder (id_folder, name, company_folder_id_company) VALUES
-(0, 'Fichierprince', 1),
-(1, 'Boulot', 1),
-(2, 'Taff', 1);
+(0, 'Fichierprince', 0),
+(1, 'Boulot', 0),
+(2, 'Taff', 0);
 
 -- Insérer des données dans la table Project
 INSERT INTO NazeDB.Project (id_project, name, folder_project_id_folder) VALUES
