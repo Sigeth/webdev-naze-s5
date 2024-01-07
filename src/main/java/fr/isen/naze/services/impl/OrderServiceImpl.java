@@ -9,6 +9,7 @@ import jakarta.enterprise.context.ApplicationScoped;
 
 import java.net.URI;
 import java.util.List;
+import java.util.function.UnaryOperator;
 
 import jakarta.ws.rs.BadRequestException;
 import jakarta.ws.rs.ForbiddenException;
@@ -17,10 +18,31 @@ import jakarta.ws.rs.core.Response;
 
 @ApplicationScoped
 public class OrderServiceImpl implements OrderService {
-    public void updateAvailability(Contact entitycontact,Contact NewContact) {
-        for(int i=0;i<entitycontact.availabilities.toArray().length;i++){
-            System.out.println(entitycontact.availabilities.toArray()[i]);
+    private void updateAvailability(List<Availability> oldAvailabilities, List<Availability> newAvailabilities) {
+        for (Availability curr : newAvailabilities) {
+            oldAvailabilities.remove(curr);
+            oldAvailabilities.add(curr);
         }
+
+        oldAvailabilities.removeIf(curr -> !newAvailabilities.contains(curr));
+    }
+
+    private boolean checkAvailabilitiesEquals(List<Availability> a1, List<Availability> a2) {
+        if (a1.size() != a2.size()) {
+            return false;
+        }
+        for (int i=0; i < a1.size(); i++) {
+            Availability o1 = a1.get(i);
+            Availability o2 = a2.get(i);
+            if (o1.id_day != o2.id_day ||
+                o1.day != o2.day ||
+                o1.morning != o2.morning ||
+                o1.afternoon != o2.afternoon
+            ){
+                return false;
+            }
+        }
+        return true;
     }
     @Override
     public OrderVM getOrderById(int id_order) {
@@ -102,8 +124,8 @@ public class OrderServiceImpl implements OrderService {
         entityContact.city = newContact.city;
         entityContact.country = newContact.country;
         entityContact.phone = newContact.phone;
-        if (!entityContact.availabilities.equals(newContact.availabilities)) {
-            updateAvailability(entityContact,newContact);
+        if (!checkAvailabilitiesEquals(entityContact.availabilities, newContact.availabilities)) {
+            updateAvailability(entityContact.availabilities, newContact.availabilities);
         }
 
         return newContact;
