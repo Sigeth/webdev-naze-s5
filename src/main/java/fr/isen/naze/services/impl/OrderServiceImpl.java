@@ -9,6 +9,7 @@ import jakarta.enterprise.context.ApplicationScoped;
 
 import java.net.URI;
 import java.util.List;
+import java.util.Optional;
 import java.util.function.UnaryOperator;
 
 import jakarta.ws.rs.BadRequestException;
@@ -19,12 +20,18 @@ import jakarta.ws.rs.core.Response;
 @ApplicationScoped
 public class OrderServiceImpl implements OrderService {
     private void updateAvailability(List<Availability> oldAvailabilities, List<Availability> newAvailabilities) {
-        for (Availability curr : newAvailabilities) {
-            oldAvailabilities.remove(curr);
-            oldAvailabilities.add(curr);
+        for (int i=0; i < newAvailabilities.size() && i < oldAvailabilities.size(); i++) {
+            Availability o1 = oldAvailabilities.get(i);
+            Availability o2 = newAvailabilities.get(i);
+
+            if (o1.id_day == o2.id_day) {
+                o1.day = o2.day;
+                o1.morning = o2.morning;
+                o1.afternoon = o2.afternoon;
+            }
         }
 
-        oldAvailabilities.removeIf(curr -> !newAvailabilities.contains(curr));
+
     }
 
     private boolean checkAvailabilitiesEquals(List<Availability> a1, List<Availability> a2) {
