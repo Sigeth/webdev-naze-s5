@@ -44,5 +44,5 @@ Groupe NAZE composé de :
 * Isaure SERVET-BOUDOU - Création de la base de données
 * Maxime SOLA - Création des models et des services grâce à Modelio
 * Robin METAIS - Création du dataset pour la démonstration et aide à la création de la base de données
-* Bastient SCHNEIDER - Implémentation des services
-* Thomas SEIGNOUR - Implémentation des services
+* Bastient SCHNEIDER - Implémentation des services et commenter le code
+* Thomas SEIGNOUR - Implémentation des services et implémentation de la documentation automatique
