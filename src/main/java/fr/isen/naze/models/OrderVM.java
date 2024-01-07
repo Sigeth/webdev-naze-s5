@@ -12,6 +12,7 @@ import jakarta.persistence.OneToOne;
 
 @objid ("d364721f-7646-4452-bf5a-17e0c7c700d4")
 @Entity
+//Initialisation de la classe OrderVM
 public class OrderVM extends PanacheEntityBase {
     @mdl.prop
     @objid ("f85b2365-bc1d-480e-91c3-b58b8ad60cdd")

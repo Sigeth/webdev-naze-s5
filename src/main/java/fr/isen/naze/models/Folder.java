@@ -7,6 +7,7 @@ import jakarta.persistence.*;
 
 @objid ("fa241b9e-0eeb-49be-813c-af70aff1fca8")
 @Entity
+//Initialisation de la classe Folder
 public class Folder extends PanacheEntityBase {
     @mdl.prop
     @objid ("82abbe73-c9f4-4caf-beb7-e9938e0a4816")

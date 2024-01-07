@@ -9,6 +9,7 @@ import jakarta.persistence.EntityManager;
 import jakarta.transaction.Transactional;
 
 @objid ("abee1db1-b932-4245-a356-124e735731f0")
+//création de l'interface ServiceLevel
 public interface ServiceLevelService {
     @objid ("8dc68944-5e16-41aa-b92f-5119bad95ec8")
     List<ServiceLevel> getServiceLevels();

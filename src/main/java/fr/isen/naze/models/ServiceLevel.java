@@ -10,6 +10,7 @@ import jakarta.persistence.Id;
 
 @objid ("cb4b5baf-5a40-4382-83f1-17af957db798")
 @Entity
+//Initialisation de la classe ServiceLevel
 public class ServiceLevel extends PanacheEntityBase {
     @mdl.prop
     @objid ("9d543c2f-23af-4dbc-9cef-f036e30b5dee")

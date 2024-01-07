@@ -9,6 +9,7 @@ import jakarta.persistence.Id;
 
 @objid ("9471442d-85d5-4599-ad46-639667db4520")
 @Entity
+//Initialisation de la classe Availability
 public class Availability extends PanacheEntityBase {
     @mdl.prop
     @objid ("f5e85c2b-6692-47e3-9957-360f396023dc")

@@ -23,14 +23,14 @@ public class OrderRessource {
     public OrderVM getOrderById(final int orderID) {
         return this.orderService.getOrderById(orderID);
     }
-
+    //Appel de la fonction getOrderById overwrite dans OrderVM
     @POST
     @Transactional
     @Consumes(MediaType.APPLICATION_JSON)
     public OrderVM addOrder(OrderVM newOrder) {
       return this.orderService.addOrder(newOrder);
     }
-
+    //Appel de la fonction addOrder overwrite dans OrderVM
     @Path("/{orderID}")
     @PUT
     @Transactional
@@ -38,13 +38,13 @@ public class OrderRessource {
     public OrderVM updateOrderById(int orderID, OrderVM newOrder) {
         return this.orderService.updateOrderById(orderID, newOrder);
     }
-
+    //Appel de la fonction updateOrderById overwrite dans OrderVM
     @Path("/{orderID}/contact")
     @GET
     public Contact getContactByOrderId(final int orderID) {
         return this.orderService.getContactByOrderId(orderID);
     }
-
+    //Appel de la fonction getContactById overwrite dans OrderVM
     @Path("/{orderID}/contact")
     @POST
     @Transactional
@@ -52,6 +52,7 @@ public class OrderRessource {
     public Contact addContactByOrderId(final int orderID, Contact newContact) {
         return this.orderService.addContactByOrderId(orderID, newContact);
     }
+    //Appel de la fonction addContactByOrderId overwrite dans OrderVM
 
     @Path("/{orderID}/contact")
     @PUT
@@ -60,4 +61,6 @@ public class OrderRessource {
     public Contact updateContactByOrderId(final int orderID, Contact newContact) {
         return this.orderService.updateContactByOrderId(orderID, newContact);
     }
+    //Appel de la fonction updateContactByOrderId overwrite dans OrderVM
+
 }

@@ -24,4 +24,6 @@ public class ServiceLevelRessource {
         return this.slService.getServiceLevels();
     }
 
+    //Appel de la fonction getServiceLevels overwrite dans ServiceLevel
+
 }

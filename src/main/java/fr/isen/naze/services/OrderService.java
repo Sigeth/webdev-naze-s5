@@ -7,6 +7,8 @@ import jakarta.persistence.criteria.Order;
 import jakarta.ws.rs.core.Response;
 
 @objid ("9117d67b-ce6a-4c7c-a888-2e38365a0d2e")
+
+//création de l'interface OrderService
 public interface OrderService {
     @objid ("c12751d6-a393-479e-a87d-0c0312b67b2a")
     OrderVM getOrderById(final int id_order);

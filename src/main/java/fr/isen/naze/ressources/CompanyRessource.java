@@ -12,11 +12,11 @@ import jakarta.ws.rs.core.MediaType;
 
 import java.util.List;
 
-@Path("/company")
+@Path("/company") //déclaration du path de la classe
 @Produces(MediaType.APPLICATION_JSON)
 public class CompanyRessource {
     @Inject
-    CompanyServiceImpl companyService;
+    CompanyServiceImpl companyService; //Initialisation de companyService qui fera le lien avec la BDD généré automatiquement
 
     public CompanyRessource() {
         this.companyService = new CompanyServiceImpl();
@@ -25,12 +25,12 @@ public class CompanyRessource {
     @GET
     public Company getCompany() {
         return this.companyService.getCompany();
-    }
+    } //Appel de la fonction getCompnay overwrite dans companyService
 
     @Path("/project")
     @GET
     public List<Project> getProjects() {
         return  this.companyService.getProjects();
     }
-
+//Appel de la fonction getProjects overwrite dans companyService
 }

@@ -9,6 +9,7 @@ import java.util.List;
 
 @objid ("0000b479-aae6-4f73-9054-c1ff77207900")
 @Entity
+//Initialisation de la classe Contact
 public class Contact extends PanacheEntityBase {
     @mdl.prop
     @objid ("e3f678fa-1ba6-44bc-8ddd-6f5b3fd83290")

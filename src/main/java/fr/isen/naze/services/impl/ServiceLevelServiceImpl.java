@@ -11,5 +11,5 @@ public class ServiceLevelServiceImpl implements ServiceLevelService {
     @Override
     public List<ServiceLevel> getServiceLevels() {
         return ServiceLevel.listAll();
-    }
+    } //renvoie tous les Services levels de la BDD
 }

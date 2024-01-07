@@ -17,16 +17,20 @@ import jakarta.ws.rs.core.Response;
 
 @ApplicationScoped
 public class OrderServiceImpl implements OrderService {
-
+    public void updateAvailability(Contact entitycontact,Contact NewContact) {
+        for(int i=0;i<entitycontact.availabilities.toArray().length;i++){
+            System.out.println(entitycontact.availabilities.toArray()[i]);
+        }
+    }
     @Override
     public OrderVM getOrderById(int id_order) {
         return OrderVM.findById(id_order);
-    }
+    } //Renvoie l'order de la BDD en fonction de son ID
 
     @Override
     public OrderVM updateOrderById(int id_order, OrderVM newOrder) {
-        OrderVM entityOrder = OrderVM.findById(id_order);
-        if (entityOrder == null ) {
+        OrderVM entityOrder = OrderVM.findById(id_order); //récupération de l'order dans la bdd en fonction de son ID
+        if (entityOrder == null ) { //Si on trouve pas d'order on renvoie une erreur
             throw new NotFoundException();
         }
 
@@ -42,7 +46,7 @@ public class OrderServiceImpl implements OrderService {
                 entityOrder.service_order = serviceLevels.get(newOrder.service_order.id_service);
             }
         }
-
+        //Update des attributs de entityOrder
         entityOrder.id_order = newOrder.id_order;
         entityOrder.carbon = newOrder.carbon;
         entityOrder.license = newOrder.license;
@@ -55,16 +59,16 @@ public class OrderServiceImpl implements OrderService {
         return newOrder;
     }
 
-    @Override
+    @Override //Création d'une nouvelle Order
     public OrderVM addOrder(OrderVM newOrder) {
         newOrder.persist();
         return newOrder;
     }
 
-    @Override
+    @Override //Récupération du contact en fonction de son orderid
     public Contact getContactByOrderId(final int id_order) {
-        OrderVM order = OrderVM.findById(id_order);
-        return order.contact_order;
+        OrderVM order = OrderVM.findById(id_order); //Récupération de l'order en fonction de l'ID
+        return order.contact_order; //Retourne le contact de l'order.
     }
 
     @Override
@@ -83,12 +87,12 @@ public class OrderServiceImpl implements OrderService {
         OrderVM entityOrder = OrderVM.findById(id_order);
         if (entityOrder == null ) {
             throw new NotFoundException();
-        }
+        } //Retourne une erreur si On ne trouve pas d'order dans la BDD
         Contact entityContact = entityOrder.contact_order;
         if (entityContact == null) {
             throw new NotFoundException();
         }
-
+        //Mise à jour des attributs de entityContact
         entityContact.id_contact = newContact.id_contact;
         entityContact.first_name = newContact.first_name;
         entityContact.last_name = newContact.last_name;
@@ -99,7 +103,7 @@ public class OrderServiceImpl implements OrderService {
         entityContact.country = newContact.country;
         entityContact.phone = newContact.phone;
         if (!entityContact.availabilities.equals(newContact.availabilities)) {
-
+            updateAvailability(entityContact,newContact);
         }
 
         return newContact;

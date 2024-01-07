@@ -10,6 +10,7 @@ import jakarta.persistence.ManyToOne;
 
 @objid ("1e7b3194-d9d4-4c51-aae2-4c22a9dfb201")
 @Entity
+//Initialisation de la classe Project
 public class Project extends PanacheEntityBase {
     @mdl.prop
     @objid ("da49365b-04ba-4c20-a33d-c3284144dd50")

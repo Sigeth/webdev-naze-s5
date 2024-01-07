@@ -13,10 +13,10 @@ public class CompanyServiceImpl implements CompanyService {
     @Override
     public Company getCompany() {
         return Company.findById(0);
-    }
+    } //renvoie le premier élément Company de la BDD
 
     @Override
     public List<Project> getProjects() {
         return Project.listAll();
-    }
+    } //Renvoie tous les Projets de la BDD
 }
